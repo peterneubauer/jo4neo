@@ -1,6 +1,6 @@
-= jo4neo - Java Objects for Neo4j
-== What does it
-Simple object mapping for neo. No byte code interweaving, just plain old reflection and plain old objects.
+== jo4neo - Java Objects for Neo4j
+=== What does it
+jo4neo is a simple Java object mapping for http://neo4.org[Neo4j]. No byte code interweaving, just plain old reflection and plain old objects.
 
 jo4neo has been developed by http://twitter.com/tcowan[Taylor Cowan], all credit goes to him.
 
@@ -51,19 +51,19 @@ User user = new User();
 user = graph.find(user).where(user.screenName).is(screenName).result();
 ----
 
-=== To find all nodes of a given type:
+==== To find all nodes of a given type:
 [source,java]
 ----
 Collection<City> cities = graph.get(City.class);
 ----
 
-=== To load a particular node as a java object:
+==== To load a particular node as a java object:
 [source,java]
 ----
 Student s = graph.get(Student.class, 45);
 ----
 
-=== To find the most recently added instances of a class:
+==== To find the most recently added instances of a class:
 
 [source,java]
 ----
