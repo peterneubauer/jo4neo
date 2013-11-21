@@ -1,0 +1,70 @@
+= jo4neo - Java Objects for Neo4j
+== What does it
+Simple object mapping for neo. No byte code interweaving, just plain old reflection and plain old objects.
+
+[source,java]
+----
+public class Person {
+   //used by jo4neo
+   transient Nodeid node; 
+   //simple property
+   @neo String firstName;
+   //helps you store a java.util.Date to neo4j 
+   @neo Date date; 
+   // jo4neo will index for you
+   @neo(index=true) String email; 
+   // many to many relation
+   @neo Collection<Role> roles; 
+
+   /* normal class oriented 
+    * programming stuff goes here
+    */
+}
+----
+
+Annotating Java Object Properties
+@neo String name;   Persist me to the graph as a property
+@neo Person friend; Persist me to the graph as a node and relation
+String misc;    Don't bother to persist me
+@neo(index=true) String name;   Persist and index this field for me
+@neo(fulltext=true) String content; Persist and full text index
+@neo("HAS_JOB") Job job;    Persist using a given relation, by name
+@embed Address address; Persist as serialized byte array
+Locating Java Objects in the graph
+If you ask jo4neo to index a property...
+
+[source,java]
+----
+public class User {
+ @neo(index=true) public String screenName;
+...}
+----
+
+you may find it like this:
+
+[source,java]
+----
+ObjectGraph graph = ...
+User user = new User();
+user = graph.find(user).where(user.screenName).is(screenName).result();
+----
+
+=== To find all nodes of a given type:
+[source,java]
+----
+Collection<City> cities = graph.get(City.class);
+----
+
+=== To load a particular node as a java object:
+[source,java]
+----
+Student s = graph.get(Student.class, 45);
+----
+
+=== To find the most recently added instances of a class:
+
+[source,java]
+----
+// get the four latest roles added to the graph
+Collection<Role> roles = graph.getMostRecent(Role.class, 4)
+----
