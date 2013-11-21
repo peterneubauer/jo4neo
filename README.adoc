@@ -2,6 +2,8 @@
 == What does it
 Simple object mapping for neo. No byte code interweaving, just plain old reflection and plain old objects.
 
+jo4neo has been developed by http://twitter.com/tcowan[Taylor Cowan], all credit goes to him.
+
 [source,java]
 ----
 public class Person {
