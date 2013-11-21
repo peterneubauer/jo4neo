@@ -2,7 +2,7 @@
 === What does it
 jo4neo is a simple Java object mapping for http://neo4.org[Neo4j]. No byte code interweaving, just plain old reflection and plain old objects.
 
-jo4neo has been developed by http://twitter.com/tcowan[Taylor Cowan], all credit goes to him.
+jo4neo has been developed by http://twitter.com/tcowan[Taylor Cowan], all credit goes to him. The https://code.google.com/p/jo4neo/[old repository] is retired, please refer here to future questions.
 
 [source,java]
 ----
