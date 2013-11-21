@@ -1,0 +1,73 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>thewebsemantic</groupId>
+	<artifactId>jo4neo</artifactId>
+	<name>jo4neo</name>
+	<version>0.2.3</version>
+	<dependencies>
+		<dependency>
+			<groupId>org.neo4j</groupId>
+			<artifactId>neo-utils</artifactId>
+			<version>1.0-b11-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>org.neo4j</groupId>
+			<artifactId>index-util</artifactId>
+			<version>0.9</version>
+		</dependency>
+		<dependency>
+			<groupId>org.neo4j</groupId>
+			<artifactId>neo</artifactId>
+			<version>1.0-b11</version>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.7</version>
+		</dependency>
+	</dependencies>
+	
+	 <build>
+        <extensions>
+            <extension>
+            	<groupId>org.jvnet.wagon-svn</groupId>
+            	<artifactId>wagon-svn</artifactId>
+            	<version>1.9</version>
+            </extension>
+        </extensions>
+		<plugins>
+		    <plugin>
+		      <groupId>org.apache.maven.plugins</groupId>
+		      <artifactId>maven-compiler-plugin</artifactId>
+		      <version>2.0.2</version>
+		      <configuration>
+		        <source>1.5</source>
+		        <target>1.5</target>
+		      </configuration>
+		    </plugin>
+		  </plugins>
+
+    </build>
+    
+    <distributionManagement>
+        <repository>
+            <uniqueVersion>false</uniqueVersion>
+            <id>googlecode</id>
+            <url>svn:https://jo4neo.googlecode.com/svn/trunk/repo</url>
+        </repository>
+        <snapshotRepository>
+            <uniqueVersion>false</uniqueVersion>
+            <id>googlecode.snapshot</id>
+            <url>svn:https://jo4neo.googlecode.com/svn/trunk/snapshotrepo</url>
+            
+        </snapshotRepository>
+    </distributionManagement>
+    
+	<repositories>
+		<repository>
+			<id>neo4j-public-repository</id>
+			<url>http://m2.neo4j.org</url>
+		</repository>
+	</repositories>
+</project>

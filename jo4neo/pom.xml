@@ -1,0 +1,43 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>thewebsemantic</groupId>
+	<artifactId>jo4neo</artifactId>
+	<name>jo4neo</name>
+	<dependencies>
+ 		<dependency>
+ 			<groupId>org.neo4j</groupId>
+ 			<artifactId>neo4j-lucene-index</artifactId>
+ 			<version>${neo4j-version}</version>
+ 		</dependency>		
+		<dependency>
+			<groupId>org.neo4j</groupId>
+			<artifactId>neo4j-kernel</artifactId>
+			<version>${neo4j-version}</version>
+		</dependency>
+		<dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>4.8</version>
+       </dependency>
+	</dependencies>
+	
+	<version>0.5-SNAPSHOT</version>
+	<properties>
+		<neo4j-version>1.4.1</neo4j-version>
+	</properties>
+
+	<build>
+		<extensions>
+			<extension>
+				<groupId>org.jvnet.wagon-svn</groupId>
+				<artifactId>wagon-svn</artifactId>
+				<version>1.9</version>
+			</extension>
+		</extensions>
+		<plugins>
+			
+		</plugins>
+
+	</build>
+</project>
